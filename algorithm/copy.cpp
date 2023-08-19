@@ -16,7 +16,7 @@ OutputIterator copy(InputIterator first, InputIterator last, OutputIterator out)
     ++out;
     ++first;
   }
-  return out;
+  return out; // 返回 OutputIterator 最后一个迭代器, 可用于后续操作
 }
 }
 

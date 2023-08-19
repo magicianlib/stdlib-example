@@ -2,15 +2,15 @@
 #include <iostream>
 #include <chrono>
 #include <vector>
-#include <iterator>
 #include <functional>
 
 namespace stdlib {
-template<typename ForwardIterator, typename GeneratorFn>
-void generate(ForwardIterator first, ForwardIterator last, GeneratorFn fn) {
-  while (first != last) {
-    *first = fn(); // 左值运算, 需要使用 ForwardIterator
+template<typename ForwardIterator, typename Size, typename GeneratorFn>
+void generate_n(ForwardIterator first, Size sz, GeneratorFn fn) {
+  while (sz > 0) {
+    *first = fn();
     ++first;
+    --sz;
   }
 }
 }
@@ -23,7 +23,7 @@ int main() {
 
   auto fc = [&]() -> int { return distribution(generator); };
 
-  stdlib::generate(vt.begin(), vt.end(), fc);
+  stdlib::generate_n(vt.begin(), vt.size(), fc);
 
   for (const auto &item : vt) {
     std::cout << item << ' ';
