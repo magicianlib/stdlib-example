@@ -3,6 +3,10 @@
 #include <array>
 
 namespace stdlib {
+/**
+ * 与 std::none_of 相反
+ * @see std::none_of
+ */
 template<typename InputIterator, typename UnaryPredicate>
 bool all_of(InputIterator first, InputIterator last, UnaryPredicate _predicate) {
   while (first != last) {
