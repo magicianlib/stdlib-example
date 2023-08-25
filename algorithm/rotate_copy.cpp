@@ -5,7 +5,7 @@
  */
 namespace stdlib {
 template<typename ForwardIterator, typename OutputIterator>
-void rotate(ForwardIterator first, ForwardIterator middle, ForwardIterator last, OutputIterator result) {
+void rotate_copy(ForwardIterator first, ForwardIterator middle, ForwardIterator last, OutputIterator result) {
   std::copy(middle, last, result);
   std::copy(first, middle, result);
 }
@@ -19,7 +19,7 @@ int main() {
 
   std::vector<int> vt(7);
 
-  std::rotate_copy(ints, ints + 3, ints + 7, vt.begin());
+  stdlib::rotate_copy(ints, ints + 3, ints + 7, vt.begin());
 
   // print out content:
   std::cout << "vt contains:";

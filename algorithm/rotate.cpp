@@ -29,7 +29,7 @@ int main() {
     vt.push_back(i);
   } // 1 2 3 4 5 6 7 8 9
 
-  std::rotate(vt.begin(), vt.begin() + 3, vt.end());
+  stdlib::rotate(vt.begin(), vt.begin() + 3, vt.end());
   // 4 5 6 7 8 9 1 2 3
   // print out content:
   std::cout << "vt contains:";
