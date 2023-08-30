@@ -3,7 +3,9 @@
 #include <iostream>
 
 /**
- * lower_bound 本质就是二分查找, 在指定(有序)区域内查找不小于目标值的第一个元素
+ * lower_bound 本质就是二分查找
+ * <br>
+ * 在有序容器中找到第一个不小于目标值元素的位置
  */
 
 namespace stdlib {

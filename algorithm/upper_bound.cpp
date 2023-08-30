@@ -3,7 +3,9 @@
 #include <iostream>
 
 /**
- * upper_bound 本质就是二分查找, 在指定(有序)区域内查找不大于目标值的第一个元素
+ * upper_bound 本质就是二分查找
+ * <br>
+ * 在<em>有序</em>序列中查找第一个<em>大于</em>目标值元素的位置
  */
 
 namespace stdlib {
