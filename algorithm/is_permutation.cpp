@@ -5,9 +5,9 @@
 #include <tuple>
 
 /**
- * 将范围 [first1,last1) 中的元素与从 first2 开始的范围中的元素进行比较，如果
- * 两个范围中的所有元素都匹配(即使顺序不同)，则返回 true。
- *
+ * 该函数的作用是判断序列 [first1, last1) 是否和序列 [first2, first2+(std::distance(first1, last1)) 是排列.
+ * 也就是说, 它判断两个序列是否包含相同的元素, 只是顺序不同.
+ * <br>
  * 注意, 最多比较大小为 [first1, last1) [first2, first2+(std::distance(first1, last1)).
  * 如:
  *    foo = {1, 2, 3, 4, 5};
@@ -16,7 +16,6 @@
  *  如果:
  *    bar = {3, 1, 4, 5, 0, 2};
  *    - 则 foo 和 bar 具有不同的元素， 因为真正比较时 bar = {3, 1, 4, 5, 0}; 最后一个 2 会被忽略.
- *
  */
 
 namespace stdlib {

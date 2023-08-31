@@ -1,5 +1,4 @@
-#include <memory>
-#include <iostream>
+#include <utility>
 
 namespace stdlib {
 template<typename InputIterator, typename UnaryFunction>
@@ -11,6 +10,9 @@ UnaryFunction for_each(InputIterator first, InputIterator last, UnaryFunction fn
   return std::move(fn);
 }
 }
+
+#include <vector>
+#include <iostream>
 
 void fn(int i) {  // function:
   std::cout << ' ' << i;
@@ -27,12 +29,12 @@ int main() {
   vt.push_back(30);
 
   std::cout << "vt contains:";
-  for_each(vt.begin(), vt.end(), &fn);
+  stdlib::for_each(vt.begin(), vt.end(), &fn);
   std::cout << '\n';
 
   // or:
   std::cout << "vt contains:";
-  for_each(vt.begin(), vt.end(), StructFn());
+  stdlib::for_each(vt.begin(), vt.end(), StructFn());
   std::cout << '\n';
 
   return 0;
