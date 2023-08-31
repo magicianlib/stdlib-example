@@ -3,7 +3,8 @@
 
 namespace stdlib {
 /**
- * 与 std::all_of 相反
+ * 判断迭代器 InputIterator 元素是否都不满足 UnaryPredicate 条件(与 std::all_of 相反).
+ *
  * @see std::all_of
  */
 template<typename InputIterator, typename UnaryPredicate>

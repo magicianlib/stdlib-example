@@ -5,10 +5,10 @@
 namespace stdlib {
 
 /**
- * adjacent_find 返回发现的第一个相邻元素相同的 Iterator, 并不代表 ++Iterator 是下一个相邻相同的元素.
- *
+ * adjacent_find 返回发现的第一个相邻元素相同的 Iterator, 并不代表 <code>++Iterator</code> 是下一个相邻相同的元素.
+ * <br>
  * ForwardIterator [begin end], Iterator 值为 [begin end] 中的任意一个指针.
- *
+ * <br>
  * 因此 Iterator 本意是 ForwardIterator + (end - begin).
  */
 

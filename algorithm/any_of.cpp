@@ -1,6 +1,10 @@
 #include <iostream>
 #include <array>
 
+/**
+ * 迭代器 InputIterator 中的任何一个元素满足 UnaryPredicate 即为true.
+ */
+
 namespace stdlib {
 template<typename InputIterator, typename UnaryPredicate>
 bool any_of(InputIterator first, InputIterator last, UnaryPredicate _predicate) {

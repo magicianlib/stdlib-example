@@ -4,12 +4,14 @@
 #include <iomanip>
 
 /**
+ * 从尾部开始拷贝元素
+ * <br>
  * BidirectionalIterator2 不会触发扩容, 应该提前准备足够容量.
  */
 namespace stdlib {
 template<typename BidirectionalIterator1, typename BidirectionalIterator2>
-BidirectionalIterator2 copy_backward(
-  BidirectionalIterator1 first1, BidirectionalIterator1 last1, BidirectionalIterator2 last2) {
+BidirectionalIterator2 copy_backward(BidirectionalIterator1 first1,
+  BidirectionalIterator1 last1, BidirectionalIterator2 last2) {
   while (first1 != last1) {
     *(--last2) = *(--last1);
   }

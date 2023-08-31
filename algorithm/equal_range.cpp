@@ -3,11 +3,16 @@
 #include <vector>
 #include <utility>
 
+/**
+ * ForwardIterator 必须是有序迭代器
+ */
 namespace stdlib {
 template<class ForwardIterator, class T>
 std::pair<ForwardIterator, ForwardIterator>
 equal_range(ForwardIterator first, ForwardIterator last, const T &val) {
+  // 利用 lower_bound 查找第一个不小于(大于或等于) val 元素的位置
   ForwardIterator it = std::lower_bound(first, last, val);
+  // 继续在 [it, last) 范围内查找第一个大于 val 元素的位置.
   return std::make_pair(it, std::upper_bound(it, last, val));
 }
 

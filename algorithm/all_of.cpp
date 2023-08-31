@@ -4,7 +4,8 @@
 
 namespace stdlib {
 /**
- * 与 std::none_of 相反
+ * 判断迭代器 InputIterator 元素是否都满足 UnaryPredicate 条件
+ *
  * @see std::none_of
  */
 template<typename InputIterator, typename UnaryPredicate>
@@ -20,9 +21,9 @@ bool all_of(InputIterator first, InputIterator last, UnaryPredicate _predicate) 
 }
 
 /**
- * 自定义一元谓词
+ * @param x 是不是奇数
  */
-bool unary_pred(const int x) {
+bool is_odd(const int x) {
   return x % 2;
 }
 
@@ -35,7 +36,7 @@ int main() {
     std::cout << "All the elements are odd numbers.\n";
   }
 
-  if (stdlib::all_of(foo.begin(), foo.end(), &unary_pred)) {
+  if (stdlib::all_of(foo.begin(), foo.end(), is_odd)) {
     std::cout << "All the elements are odd numbers.\n";
   }
 

@@ -6,6 +6,8 @@
  * upper_bound 本质就是二分查找
  * <br>
  * 在<em>有序</em>序列中查找第一个<em>大于</em>目标值元素的位置
+ *
+ * @see lower_bound
  */
 
 namespace stdlib {
