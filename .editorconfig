@@ -295,7 +295,8 @@ ij_c_space_between_operator_and_punctuator = false
 ij_c_space_within_empty_array_initializer_braces = false
 ij_c_spaces_around_additive_operators = true
 ij_c_spaces_around_assignment_operators = true
-ij_c_spaces_around_bitwise_operators = true
+# 位运算两侧是否有空格
+ij_c_spaces_around_bitwise_operators = false
 ij_c_spaces_around_equality_operators = true
 ij_c_spaces_around_lambda_arrow = true
 ij_c_spaces_around_logical_operators = true
