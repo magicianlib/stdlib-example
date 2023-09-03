@@ -7,13 +7,6 @@ void swap(T &a, T &b) {
   b = std::move(c);
 }
 
-template<typename T, std::size_t N>
-void swap(T (&a)[N], T (&b)[N]) {
-  for (int i = 0; i < N; ++i) {
-    swap(a[i], b[i]);
-  }
-}
-
 namespace stdlib {
 template<typename ForwardIterator1, typename ForwardIterator2>
 ForwardIterator2 swap_ranges(ForwardIterator1 first1, ForwardIterator1 last1,

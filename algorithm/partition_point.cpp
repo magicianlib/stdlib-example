@@ -5,7 +5,11 @@
 #include <iterator>
 
 /**
- * 返回第一个 _predicate(*ForwardIterator) 为 false 的迭代器, 使用前提是已经执行过 partition(first, last)
+ * std::partition_point 是 C++ 标准库中的一个算法, 用于在给定范围内找到一个分区点(使得满足 p 的元素位于该点的
+ * 前面, 而不满足 p 的元素则位于该点的后面. 函数返回一个迭代器，指向该分区点).
+ * <br>
+ * 与 std::partition 不同的是, std::partition_point 仅返回一个分区点，而不是对
+ * 整个范围进行分区.
  */
 
 namespace stdlib {

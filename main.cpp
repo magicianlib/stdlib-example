@@ -5,31 +5,43 @@
 #include <iterator>
 #include <functional>
 
-namespace stdlib {
-template<typename ForwardIterator, typename GeneratorFn>
-void generate(ForwardIterator first, ForwardIterator last, GeneratorFn fn) {
-  while (first != last) {
-    *first = fn(); // 左值运算, 需要使用 ForwardIterator
-    ++first;
+template<typename T, std::size_t N>
+void copy_array(const T (&src)[N], T (&dst)[N]) {
+  for (std::size_t i = 0; i < N; ++i) {
+    dst[i] = src[i];
   }
 }
-}
 
-static std::default_random_engine generator(std::chrono::system_clock::now().time_since_epoch().count());
-static std::uniform_int_distribution<int> distribution(0, 10);
+template<typename T>
+void copy_array(const T (&src)[], T (&dst)[]) {
+  for (std::size_t i = 0; i < src.size(); ++i) {
+    dst[i] = src[i];
+  }
+}
 
 int main() {
-  std::vector<int> vt(10);
 
-  auto fc = [&]() -> int { return distribution(generator); };
+  int src_arr[5] = {1, 2, 3, 4, 5};
+  int dst_arr[5] = {6, 7, 8, 9, 10};
 
-  stdlib::generate(vt.begin(), vt.end(), fc);
+  copy_array<int, 5>(src_arr, dst_arr);
 
-  for (const auto &item : vt) {
-    std::cout << item << ' ';
-  }
+  // 省略数组大小
+  copy_array<int>(src_arr, dst_arr);
 
-  std::cout << '\n';
+  // 同时省略类型与大小
+  copy_array(src_arr, dst_arr);
+
+  std::vector<std::string> a1 = {"apple", "banana", "cherry"};
+  std::vector<std::string> a2 = {"apple", "bn", "ch"};
+
+  std::vector<std::string>::iterator it1;
+  std::vector<std::string>::iterator it2;
+
+  std::tie(it1, it2) = std::mismatch(a1.begin(), a1.end(), a2.begin());
+
+  std::cout << *it1 << '\n';
+  std::cout << *it2 << '\n';
 
   return 0;
 }

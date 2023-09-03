@@ -3,7 +3,9 @@
 #include <iostream>
 
 /**
- *
+ * 用于将元素从给定范围的起始位置移动到结束位置, 同时保留元素的原有顺序.
+ * <br>
+ * 函数会将从 first 到 last 的元素逆序移动到从 result-1 到 first+last-1 的位置上, 并返回目标范围的结束位置.
  */
 
 namespace stdlib {

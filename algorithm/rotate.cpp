@@ -1,6 +1,8 @@
 #include <algorithm>
 
 /**
+ * 用于旋转（即反转）一个序列
+ * <br>
  * 将 [first, middle) 和 [middle, last) 位置互换, 即得到 [middle, last-1, first)
  */
 namespace stdlib {

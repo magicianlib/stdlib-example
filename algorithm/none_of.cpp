@@ -1,12 +1,13 @@
 #include <array>
 #include <iostream>
 
-namespace stdlib {
 /**
  * 判断迭代器 InputIterator 元素是否都不满足 UnaryPredicate 条件(与 std::all_of 相反).
  *
  * @see std::all_of
  */
+
+namespace stdlib {
 template<typename InputIterator, typename UnaryPredicate>
 bool none_of(InputIterator first, InputIterator last, UnaryPredicate _predicate) {
   while (first != last) {

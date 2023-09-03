@@ -5,8 +5,9 @@
 #include <iostream>
 
 /**
- * 词典法小于比较, 即 InputIterator1 和 InputIterator1 之间按照词典法使用小于符号进行比较.
- * 按照顺序如果每个位置的元素都相同, 元素个数少的一方更小.
+ * 按照字典顺序比较两个序列. 如果第一个序列小于第二个序列, 则返回true, 否则返回false.
+ * <br>
+ * 如果每个位置的元素都相同, 元素个数少的一方更小.
  */
 
 namespace stdlib {

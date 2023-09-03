@@ -1,7 +1,7 @@
 #include <algorithm>
 
 /**
- * 取两个迭代器的差集
+ * 计算两个集合的对称差集
  */
 
 namespace stdlib {

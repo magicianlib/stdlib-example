@@ -5,7 +5,7 @@
 #include <tuple>
 
 /**
- * 该函数的作用是判断序列 [first1, last1) 是否和序列 [first2, first2+(std::distance(first1, last1)) 是排列.
+ * 该函数的作用是判断序列 [first1, last1) 是否和序列 [first2, first2+(std::distance(first1, last1)) 是相对排列.
  * 也就是说, 它判断两个序列是否包含相同的元素, 只是顺序不同.
  * <br>
  * 注意, 最多比较大小为 [first1, last1) [first2, first2+(std::distance(first1, last1)).

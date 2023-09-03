@@ -1,7 +1,12 @@
 #include <algorithm>
 
 /**
- * 从 InputIterator1 中查找不在 InputIterator2 中的元素
+ * 用于计算两个集合的差集
+ * <br>
+ * 该算法将第一个集合InputIterator1中存在但在第二个集合InputIterator2中不存在的元素复制到结果集合OutputIterator中,
+ * 结果集合是第一个集合的子集, 不包含在第二个集合中的元素.
+ *
+ * @see set_symmetric_difference
  */
 
 namespace stdlib {

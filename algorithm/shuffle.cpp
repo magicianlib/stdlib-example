@@ -20,7 +20,15 @@ int main() {
 
   unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
 
-  stdlib::shuffle(foo.begin(), foo.end(), std::default_random_engine(seed));
+  std::cout << std::mt19937::max() << '\n';
+  std::cout << std::mt19937_64::max() << '\n';
+
+  // use default_random_engine
+  // stdlib::shuffle(foo.begin(), foo.end(), std::default_random_engine(seed));
+
+  // use mt19937 or mt19937_64
+  stdlib::shuffle(foo.begin(), foo.end(), std::mt19937(seed)); // use time_since_epoch as seed
+  stdlib::shuffle(foo.begin(), foo.end(), std::mt19937_64(std::random_device{}())); // use random_device as seed
 
   std::cout << "foo: " << '\n';
   for (int &item : foo) {
