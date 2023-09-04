@@ -4,7 +4,9 @@
 #include <iostream>
 
 /**
- * 判断有几位设置为 1
+ * 判断有几个 bit 位设置为 1
+ *
+ * @see none
  */
 
 int main() {
