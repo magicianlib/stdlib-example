@@ -1,47 +1,38 @@
-#include <random>
+#include <bitset>
+#include <cstddef>
 #include <iostream>
-#include <chrono>
-#include <vector>
-#include <iterator>
-#include <functional>
 
-template<typename T, std::size_t N>
-void copy_array(const T (&src)[N], T (&dst)[N]) {
-  for (std::size_t i = 0; i < N; ++i) {
-    dst[i] = src[i];
-  }
+std::ostream &operator<<(std::ostream &out, std::byte b) {
+  return out << std::bitset<8>(std::to_integer<int>(b));
 }
 
-template<typename T>
-void copy_array(const T (&src)[], T (&dst)[]) {
-  for (std::size_t i = 0; i < src.size(); ++i) {
-    dst[i] = src[i];
-  }
+struct User {
+  static inline int example_val{100};
+
+private:
+  std::string username{};
+  int age{};
+  std::string mobile_phone{};
+
+public:
+  const std::string &get_username() const { return username; }
+  void set_username(const std::string &_username) { username = _username; }
+  int get_age() const { return age; }
+  void set_age(int _age) { age = _age; }
+  const std::string &get_mobile_phone() const { return mobile_phone; }
+  void set_mobile_phone(const std::string &_mobile_phone) { mobile_phone = _mobile_phone; }
+};
+
+constexpr int user_addr{10};
+
+User get_user() {
+  return User{};
 }
 
 int main() {
+  int b[10]{1, 2};
 
-  int src_arr[5] = {1, 2, 3, 4, 5};
-  int dst_arr[5] = {6, 7, 8, 9, 10};
-
-  copy_array<int, 5>(src_arr, dst_arr);
-
-  // 省略数组大小
-  copy_array<int>(src_arr, dst_arr);
-
-  // 同时省略类型与大小
-  copy_array(src_arr, dst_arr);
-
-  std::vector<std::string> a1 = {"apple", "banana", "cherry"};
-  std::vector<std::string> a2 = {"apple", "bn", "ch"};
-
-  std::vector<std::string>::iterator it1;
-  std::vector<std::string>::iterator it2;
-
-  std::tie(it1, it2) = std::mismatch(a1.begin(), a1.end(), a2.begin());
-
-  std::cout << *it1 << '\n';
-  std::cout << *it2 << '\n';
+  std::byte data[10]{std::byte{1}};
 
   return 0;
 }

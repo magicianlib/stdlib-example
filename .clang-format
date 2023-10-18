@@ -1,0 +1,40 @@
+---
+# 使用 Google 风格
+BasedOnStyle: Google
+# 不使用 Tab
+UseTab: Never
+# UseTab 为 Never 时不生效
+TabWidth: 0
+# 缩进空格数
+IndentWidth: 2
+# 每行最大字符数
+ColumnLimit: 120
+
+---
+# 定义 C++ 代码风格
+Language: Cpp
+# 函数变量参数是否需要对其
+AlignAfterOpenBracket: false
+# 语句是否允许单行
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortBlocksOnASingleLine: Never
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: InlineOnly
+AllowShortLambdasOnASingleLine: Inline
+AllowShortLoopsOnASingleLine: false
+# 指针和引用操作符对其方式:
+# `int* a; int& b; *a = b;`
+PointerAlignment: Left
+ReferenceAlignment: Left
+SpaceAroundPointerQualifiers: Default
+# 是否根据上下文自动推断指针对其方式
+DerivePointerAlignment: true
+# 命名空间缩进方式(不缩进)
+NamespaceIndentation: None
+# 访问修饰符缩进进(不缩进)
+AccessModifierOffset: -2
+# 命名空间紧凑布局
+CompactNamespaces: false
+# 命名空间尾部自动插入结束字符
+FixNamespaceComments: true

@@ -1,14 +1,12 @@
 #include <bitset>
-#include <string>
-#include <iomanip>
 #include <iostream>
+#include <string>
 
 /**
  * 所有位置是否全部设置为 1
  */
 
 int main() {
-
   std::bitset<4> foo{std::string{"0111"}};
   std::bitset<4> bar{std::string{"1111"}};
 
