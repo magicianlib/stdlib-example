@@ -30,12 +30,12 @@ SpaceAfterTemplateKeyword: false
 PointerAlignment: Left
 ReferenceAlignment: Left
 SpaceAroundPointerQualifiers: Default
-# 是否根据上下文自动推断指针对其方式
-DerivePointerAlignment: true
+# 是否根据上下文自动推断指针对其方式(使用上面自定义对其方式)
+DerivePointerAlignment: false
 # 命名空间缩进方式(不缩进)
 NamespaceIndentation: None
-# 访问修饰符缩进进(不缩进)
-AccessModifierOffset: -2
+# 访问修饰符缩进进(缩进1个单位)
+AccessModifierOffset: -1
 # 命名空间紧凑布局
 CompactNamespaces: false
 # 命名空间尾部自动插入结束字符
