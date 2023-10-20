@@ -1,6 +1,6 @@
+#include <iostream>
 #include <utility>
 #include <vector>
-#include <iostream>
 
 /**
  * 将范围 [first1,last1) 中的元素与从 first2 开始的范围中的元素进行比较，并返回两个序列中不匹配的第一个元素.
@@ -14,8 +14,7 @@ namespace stdlib {
  * version 1
  */
 template<typename InputIterator1, typename InputIterator2>
-std::pair<InputIterator1, InputIterator2> mismatch(
-  InputIterator1 first1, InputIterator1 last1, InputIterator2 first2) {
+std::pair<InputIterator1, InputIterator2> mismatch(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2) {
   while (first1 != last1 && (*first1 == *first2)) {
     ++first1;
     ++first2;
@@ -28,15 +27,14 @@ std::pair<InputIterator1, InputIterator2> mismatch(
  */
 template<typename InputIterator1, typename InputIterator2, typename BinaryPredicate>
 std::pair<InputIterator1, InputIterator2> mismatch(
-  InputIterator1 first1, InputIterator1 last1,
-  InputIterator2 first2, BinaryPredicate _predicate) {
+    InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, BinaryPredicate _predicate) {
   while (first1 != last1 && _predicate(*first1, *first2)) {
     ++first1;
     ++first2;
   }
   return std::make_pair(first1, first2);
 }
-}
+}  // namespace stdlib
 
 bool predicate(int x, int y) {
   return (x == y);

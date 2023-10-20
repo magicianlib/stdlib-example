@@ -9,10 +9,10 @@ void rotate_copy(ForwardIterator first, ForwardIterator middle, ForwardIterator 
   std::copy(middle, last, result);
   std::copy(first, middle, result);
 }
-}
+}  // namespace stdlib
 
-#include <vector>
 #include <iostream>
+#include <vector>
 
 int main() {
   int ints[] = {10, 20, 30, 40, 50, 60, 70};

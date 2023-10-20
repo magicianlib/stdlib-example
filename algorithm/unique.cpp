@@ -25,7 +25,7 @@ ForwardIterator unique(ForwardIterator first, ForwardIterator last, BinaryPredic
   }
   return result;
 }
-}
+}  // namespace stdlib
 
 #include <iostream>
 #include <vector>
@@ -35,18 +35,18 @@ bool myfunction(int i, int j) {
 }
 
 int main() {
-  int ints[] = {10, 20, 20, 20, 30, 30, 20, 20, 10};           // 10 20 20 20 30 30 20 20 10
+  int ints[] = {10, 20, 20, 20, 30, 30, 20, 20, 10};  // 10 20 20 20 30 30 20 20 10
   std::vector<int> vt(ints, ints + 9);
 
   // using default comparison:
   std::vector<int>::iterator it;
-  it = stdlib::unique(vt.begin(), vt.end());   // 10 20 30 20 10 ?  ?  ?  ?
+  it = stdlib::unique(vt.begin(), vt.end());  // 10 20 30 20 10 ?  ?  ?  ?
   //                ^
 
-  vt.resize(std::distance(vt.begin(), it)); // 10 20 30 20 10
+  vt.resize(std::distance(vt.begin(), it));  // 10 20 30 20 10
 
   // using predicate comparison:
-  stdlib::unique(vt.begin(), vt.end(), myfunction);   // (no changes)
+  stdlib::unique(vt.begin(), vt.end(), myfunction);  // (no changes)
 
   // print out content:
   std::cout << "vt contains:";

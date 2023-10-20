@@ -1,7 +1,7 @@
-#include <vector>
 #include <algorithm>
-#include <numeric>
 #include <iostream>
+#include <numeric>
+#include <vector>
 
 /**
  * 从迭代器中找到第 n 小的元素 K, 并将 K 移动到迭代器中第 n 的位置处. 不仅如此, 整个迭代器经过 nth_element
@@ -14,13 +14,13 @@
 namespace stdlib {
 template<typename RandomAccessIterator>
 void nth_element(RandomAccessIterator first, RandomAccessIterator nth, RandomAccessIterator last) {
-  if (first == last || nth == last) { // 如果不存在元素或 nth 是尾迭代器, 不做处理
+  if (first == last || nth == last) {  // 如果不存在元素或 nth 是尾迭代器, 不做处理
     return;
   }
 
   // TODO...
 }
-}
+}  // namespace stdlib
 
 bool compare(int x, int y) {
   return (x < y);

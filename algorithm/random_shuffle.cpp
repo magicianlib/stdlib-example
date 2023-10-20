@@ -1,5 +1,5 @@
-#include <iterator>
 #include <algorithm>
+#include <iterator>
 
 namespace stdlib {
 /*template<typename RandomAccessIterator>
@@ -14,12 +14,12 @@ void random_shuffle(RandomAccessIterator first, RandomAccessIterator last, Rando
     std::swap(first[i], first[_generator(i + 1)]);
   }
 }
-}
+}  // namespace stdlib
 
-#include <ctime>
 #include <cstdlib>
-#include <vector>
+#include <ctime>
 #include <iostream>
+#include <vector>
 
 int my_random(int i) {
   return std::rand() % i;
@@ -31,7 +31,7 @@ int main() {
   std::vector<int> vt;
 
   for (int i = 1; i < 10; ++i) {
-    vt.push_back(i); // 1 2 3 4 5 6 7 8 9
+    vt.push_back(i);  // 1 2 3 4 5 6 7 8 9
   }
 
   // using built-in random generator:

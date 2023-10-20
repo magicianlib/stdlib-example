@@ -5,8 +5,8 @@
 
 namespace stdlib {
 template<typename InputIterator, typename OutputIterator, typename UnaryPredicate>
-OutputIterator remove_copy_if(InputIterator first,
-  InputIterator last, OutputIterator result, UnaryPredicate _predicate) {
+OutputIterator remove_copy_if(
+    InputIterator first, InputIterator last, OutputIterator result, UnaryPredicate _predicate) {
   while (first != last) {
     if (!_predicate(*first)) {
       *result = *first;
@@ -16,13 +16,15 @@ OutputIterator remove_copy_if(InputIterator first,
   }
   return result;
 }
+}  // namespace stdlib
+
+#include <algorithm>  // std::remove_copy_if
+#include <iostream>   // std::cout
+#include <vector>     // std::vector
+
+bool is_odd(int i) {
+  return (i % 2);
 }
-
-#include <iostream>     // std::cout
-#include <algorithm>    // std::remove_copy_if
-#include <vector>       // std::vector
-
-bool is_odd(int i) { return (i % 2); }
 
 int main() {
   int ints[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};

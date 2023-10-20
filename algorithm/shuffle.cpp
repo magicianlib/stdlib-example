@@ -9,7 +9,7 @@ void shuffle(RandomAccessIterator first, RandomAccessIterator last, RandomEngine
     std::swap(first[i], first[dis(_engine)]);
   }
 }
-}
+}  // namespace stdlib
 
 #include <array>
 #include <chrono>
@@ -27,8 +27,8 @@ int main() {
   // stdlib::shuffle(foo.begin(), foo.end(), std::default_random_engine(seed));
 
   // use mt19937 or mt19937_64
-  stdlib::shuffle(foo.begin(), foo.end(), std::mt19937(seed)); // use time_since_epoch as seed
-  stdlib::shuffle(foo.begin(), foo.end(), std::mt19937_64(std::random_device{}())); // use random_device as seed
+  stdlib::shuffle(foo.begin(), foo.end(), std::mt19937(seed));                       // use time_since_epoch as seed
+  stdlib::shuffle(foo.begin(), foo.end(), std::mt19937_64(std::random_device{}()));  // use random_device as seed
 
   std::cout << "foo: " << '\n';
   for (int &item : foo) {

@@ -6,8 +6,8 @@
 
 namespace stdlib {
 template<typename ForwardIterator1, typename ForwardIterator2>
-ForwardIterator1 search(ForwardIterator1 first1, ForwardIterator1 last1,
-  ForwardIterator2 first2, ForwardIterator2 last2) {
+ForwardIterator1 search(
+    ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, ForwardIterator2 last2) {
   if (first2 == last2) {
     return first1;
   }
@@ -17,10 +17,10 @@ ForwardIterator1 search(ForwardIterator1 first1, ForwardIterator1 last1,
     while (*it1 == *it2) {
       ++it1;
       ++it2;
-      if (it2 == last2) { // 子串 ForwardIterator2 已到尾部
+      if (it2 == last2) {  // 子串 ForwardIterator2 已到尾部
         return first1;
       }
-      if (it1 == last1) { // 迭代器 ForwardIterator1 已到尾部, 说明子串后续节点不在 ForwardIterator1 中
+      if (it1 == last1) {  // 迭代器 ForwardIterator1 已到尾部, 说明子串后续节点不在 ForwardIterator1 中
         return last1;
       }
     }
@@ -30,8 +30,8 @@ ForwardIterator1 search(ForwardIterator1 first1, ForwardIterator1 last1,
 }
 
 template<typename ForwardIterator1, typename ForwardIterator2, typename BinaryPredicate>
-ForwardIterator1 search(ForwardIterator1 first1, ForwardIterator1 last1,
-  ForwardIterator2 first2, ForwardIterator2 last2, BinaryPredicate _predicate) {
+ForwardIterator1 search(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2,
+    ForwardIterator2 last2, BinaryPredicate _predicate) {
   if (first2 == last2) {
     return first1;
   }
@@ -41,10 +41,10 @@ ForwardIterator1 search(ForwardIterator1 first1, ForwardIterator1 last1,
     while (_predicate(*it1, *it2)) {
       ++it1;
       ++it2;
-      if (it2 == last2) { // 子串 ForwardIterator2 已到尾部
+      if (it2 == last2) {  // 子串 ForwardIterator2 已到尾部
         return first1;
       }
-      if (it1 == last1) { // 迭代器 ForwardIterator1 已到尾部, 说明子串后续节点不在 ForwardIterator1 中
+      if (it1 == last1) {  // 迭代器 ForwardIterator1 已到尾部, 说明子串后续节点不在 ForwardIterator1 中
         return last1;
       }
     }
@@ -52,7 +52,7 @@ ForwardIterator1 search(ForwardIterator1 first1, ForwardIterator1 last1,
   }
   return last1;
 }
-}
+}  // namespace stdlib
 
 #include <iostream>
 #include <vector>

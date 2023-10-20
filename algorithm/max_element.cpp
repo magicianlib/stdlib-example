@@ -8,7 +8,7 @@ InputIterator max_element(InputIterator first, InputIterator last) {
   }
 
   InputIterator largest = first;
-  while (++first != last) { // skip first
+  while (++first != last) {  // skip first
     if (*largest < *first) {
       largest = first;
     }
@@ -23,16 +23,18 @@ InputIterator max_element(InputIterator first, InputIterator last, Compare _comp
   }
 
   InputIterator largest = first;
-  while (++first != last) { // skip first
+  while (++first != last) {  // skip first
     if (_compare(*largest, *first)) {
       largest = first;
     }
   }
   return largest;
 }
-}
+}  // namespace stdlib
 
-bool compare(int i, int j) { return i < j; }
+bool compare(int i, int j) {
+  return i < j;
+}
 
 struct Functor {
   bool operator()(int i, int j) { return i < j; }

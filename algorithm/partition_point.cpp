@@ -1,8 +1,8 @@
 #include <algorithm>
-#include <numeric>
-#include <vector>
 #include <iostream>
 #include <iterator>
+#include <numeric>
+#include <vector>
 
 /**
  * std::partition_point 是 C++ 标准库中的一个算法, 用于在给定范围内找到一个分区点(使得满足 p 的元素位于该点的
@@ -31,7 +31,7 @@ ForwardIterator partition_point(ForwardIterator first, ForwardIterator last, Una
   }
   return first;
 }
-}
+}  // namespace stdlib
 
 bool is_odd(int v) {
   return (v % 2);
@@ -52,5 +52,4 @@ int main() {
     std::cout << ' ' << x;
   }
   std::cout << '\n';
-
 }

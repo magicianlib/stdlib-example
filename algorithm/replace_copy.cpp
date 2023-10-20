@@ -1,18 +1,18 @@
 namespace stdlib {
 template<typename InputIterator, typename OutputIterator, typename T>
-OutputIterator replace_copy(InputIterator first, InputIterator last,
-  OutputIterator result, const T &old_val, const T &new_val) {
+OutputIterator replace_copy(
+    InputIterator first, InputIterator last, OutputIterator result, const T &old_val, const T &new_val) {
   while (first != last) {
     *result = (*first == old_val) ? new_val : *first;
     ++result;
   }
   return result;
 }
-}
+}  // namespace stdlib
 
-#include <iostream>     // std::cout
-#include <algorithm>    // std::replace_copy
-#include <vector>       // std::vector
+#include <algorithm>  // std::replace_copy
+#include <iostream>   // std::cout
+#include <vector>     // std::vector
 
 int main() {
   int myints[] = {10, 20, 30, 30, 20, 10, 10, 20};

@@ -1,5 +1,5 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <iterator>
 #include <utility>
 
@@ -27,10 +27,9 @@ ForwardIterator remove(ForwardIterator first, ForwardIterator last, const T &val
   }
   return result;
 }
-}
+}  // namespace stdlib
 
 int main() {
-
   int ints[] = {10, 20, 30, 30, 20, 10, 10, 20};
 
   int *begin = ints;

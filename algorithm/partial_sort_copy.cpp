@@ -1,7 +1,7 @@
-#include <iterator>
 #include <algorithm>
-#include <vector>
 #include <iostream>
+#include <iterator>
+#include <vector>
 
 /**
  * 复制 [first,last) 到 [result_first, result_last) 范围内的最小元素，并对
@@ -14,13 +14,13 @@
 
 namespace stdlib {
 template<typename InputIterator, typename RandomAccessIterator>
-void partial_sort_copy(InputIterator first, InputIterator last,
-  RandomAccessIterator result_first, RandomAccessIterator result_last);
+void partial_sort_copy(
+    InputIterator first, InputIterator last, RandomAccessIterator result_first, RandomAccessIterator result_last);
 
 template<typename InputIterator, typename RandomAccessIterator, typename Compare>
-void partial_sort_copy(InputIterator first, InputIterator last,
-  RandomAccessIterator result_first, RandomAccessIterator result_last, Compare _compare);
-}
+void partial_sort_copy(InputIterator first, InputIterator last, RandomAccessIterator result_first,
+    RandomAccessIterator result_last, Compare _compare);
+}  // namespace stdlib
 
 bool int_compare(int x, int y) {
   return (x < y);

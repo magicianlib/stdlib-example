@@ -1,6 +1,6 @@
+#include <iostream>
 #include <string>
 #include <utility>
-#include <iostream>
 
 /**
  * 用于将元素从给定范围的起始位置移动到结束位置, 同时保留元素的原有顺序.
@@ -10,14 +10,14 @@
 
 namespace stdlib {
 template<typename BidirectionalIterator1, typename BidirectionalIterator2>
-BidirectionalIterator2 move_backward(BidirectionalIterator1 first,
-  BidirectionalIterator1 last, BidirectionalIterator2 result) {
+BidirectionalIterator2 move_backward(
+    BidirectionalIterator1 first, BidirectionalIterator1 last, BidirectionalIterator2 result) {
   while (last != first) {
-    *(--result) = std::move(*(--last));
+    *--result = std::move(*--last);
   }
   return result;
 }
-}
+}  // namespace stdlib
 
 int main() {
   std::string elems[10] = {"air", "water", "fire", "earth"};
@@ -27,7 +27,7 @@ int main() {
   elems[0] = "ether";
 
   std::cout << "elems contains:";
-  for (const auto & elem : elems) {
+  for (const auto& elem : elems) {
     std::cout << " [" << elem << "]";
   }
   std::cout << '\n';

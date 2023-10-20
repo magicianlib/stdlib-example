@@ -1,5 +1,5 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
 namespace stdlib {
@@ -44,7 +44,7 @@ ForwardIterator adjacent_find(ForwardIterator first, ForwardIterator last, Binar
   return last;
 }
 
-}
+}  // namespace stdlib
 
 /**
  * 自定义二元谓词

@@ -1,7 +1,7 @@
+#include <iostream>
+#include <string>
 #include <utility>
 #include <vector>
-#include <string>
-#include <iostream>
 
 namespace stdlib {
 template<typename InputIterator, typename OutputIterator>
@@ -13,7 +13,7 @@ OutputIterator move(InputIterator first, InputIterator last, OutputIterator out)
   }
   return out;
 }
-}
+}  // namespace stdlib
 
 int main() {
   std::vector<std::string> foo = {"air", "water", "fire", "earth"};

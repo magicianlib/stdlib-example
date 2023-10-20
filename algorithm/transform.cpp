@@ -10,20 +10,22 @@ OutputIterator transform(InputIterator first, InputIterator last, OutputIterator
 }
 
 template<typename InputIterator1, typename InputIterator2, typename OutputIterator, typename BinaryOperator>
-OutputIterator transform(InputIterator1 first1, InputIterator1 last1,
-  InputIterator2 first2, OutputIterator result, BinaryOperator _operator) {
+OutputIterator transform(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, OutputIterator result,
+    BinaryOperator _operator) {
   while (first1 != last1) {
     *result = _operator(*first1, *first2++);
     ++first1;
     ++result;
   }
 }
-}
+}  // namespace stdlib
 
-#include <vector>
 #include <iostream>
+#include <vector>
 
-int op_increase(int i) { return ++i; }
+int op_increase(int i) {
+  return ++i;
+}
 
 int main() {
   std::vector<int> foo;
@@ -32,9 +34,9 @@ int main() {
   // set some values:
   for (int i = 1; i < 6; i++) {
     foo.push_back(i * 10);
-  }                         // foo: 10 20 30 40 50
+  }  // foo: 10 20 30 40 50
 
-  bar.resize(foo.size());                         // allocate space
+  bar.resize(foo.size());  // allocate space
 
   stdlib::transform(foo.begin(), foo.end(), bar.begin(), op_increase);
   // bar: 11 21 31 41 51

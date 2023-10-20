@@ -18,22 +18,24 @@ ForwardIterator remove_if(ForwardIterator first, ForwardIterator last, UnaryPred
   }
   return result;
 }
-}
+}  // namespace stdlib
 
 // remove_if example
-#include <iostream>     // std::cout
-#include <algorithm>    // std::remove_if
+#include <algorithm>  // std::remove_if
+#include <iostream>   // std::cout
 
-bool is_odd(int i) { return ((i % 2) == 1); }
+bool is_odd(int i) {
+  return ((i % 2) == 1);
+}
 
 int main() {
-  int ints[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};            // 1 2 3 4 5 6 7 8 9
+  int ints[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};  // 1 2 3 4 5 6 7 8 9
 
   // bounds of range:
   int *begin = ints;
   int *pend = ints + sizeof(ints) / sizeof(int);
 
-  pend = std::remove_if(begin, pend, is_odd);   // 2 4 6 8 ? ? ? ? ?
+  pend = std::remove_if(begin, pend, is_odd);  // 2 4 6 8 ? ? ? ? ?
 
   std::cout << "the range contains:";
   for (int *p = begin; p != pend; ++p) {

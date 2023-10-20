@@ -1,9 +1,9 @@
 #include <algorithm>
-#include <numeric>
+#include <iostream>
 #include <iterator>
+#include <numeric>
 #include <random>
 #include <vector>
-#include <iostream>
 
 /**
  * 重新排列范围 [first,last) 中的元素, 使得 middle 之前的元素是整个范围中最小的元素.
@@ -16,14 +16,13 @@ void partial_sort(RandomAccessIterator first, RandomAccessIterator middle, Rando
 
 template<typename RandomAccessIterator, typename Compare>
 void partial_sort(RandomAccessIterator first, RandomAccessIterator middle, RandomAccessIterator last, Compare _compare);
-}
+}  // namespace stdlib
 
 bool int_compare(int x, int y) {
   return (x < y);
 }
 
 int main() {
-
   std::vector<int> vt(100);
   std::iota(vt.begin(), vt.end(), 1);
 

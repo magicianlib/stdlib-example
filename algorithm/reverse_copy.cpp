@@ -9,7 +9,7 @@ void reverse_copy(BidirectionalIterator first, BidirectionalIterator last, Outpu
     ++result;
   }
 }
-}
+}  // namespace stdlib
 
 #include <iostream>
 #include <vector>
@@ -18,7 +18,7 @@ int main() {
   int ints[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
   std::vector<int> vt;
 
-  vt.resize(9);    // allocate space
+  vt.resize(9);  // allocate space
 
   std::reverse_copy(ints, ints + 9, vt.begin());
 

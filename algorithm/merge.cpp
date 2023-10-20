@@ -1,7 +1,7 @@
 #include <algorithm>
+#include <iostream>
 #include <iterator>
 #include <vector>
-#include <iostream>
 
 /**
  * 将两个有序迭代器(InputIterator1, InputIterator1)合并输出到 OutputIterator.
@@ -12,14 +12,13 @@
 
 namespace stdlib {
 template<typename InputIterator1, typename InputIterator2, typename OutputIterator>
-OutputIterator merge(InputIterator1 first1, InputIterator1 last1,
-  InputIterator2 first2, InputIterator2 last2, OutputIterator out) {
-
+OutputIterator merge(
+    InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputIterator out) {
   while (true) {
-    if (first1 == last1) { // 处理边界(InputIterator1没有后续元素)
+    if (first1 == last1) {  // 处理边界(InputIterator1没有后续元素)
       return std::copy(first2, last2, out);
     }
-    if (first2 == last2) { // 处理边界(InputIterator2没有后续元素)
+    if (first2 == last2) {  // 处理边界(InputIterator2没有后续元素)
       return std::copy(first1, last1, out);
     }
     *out++ = (*first1 < *first2) ? *first1++ : *first2++;
@@ -27,22 +26,21 @@ OutputIterator merge(InputIterator1 first1, InputIterator1 last1,
 }
 
 template<typename InputIterator1, typename InputIterator2, typename OutputIterator, typename Compare>
-OutputIterator merge(InputIterator1 first1, InputIterator1 last1,
-  InputIterator2 first2, InputIterator2 last2, OutputIterator out, Compare _compare) {
+OutputIterator merge(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2,
+    OutputIterator out, Compare _compare) {
   while (true) {
-    if (first1 == last1) { // 处理边界(InputIterator1没有后续元素)
+    if (first1 == last1) {  // 处理边界(InputIterator1没有后续元素)
       return std::copy(first2, last2, out);
     }
-    if (first2 == last2) { // 处理边界(InputIterator2没有后续元素)
+    if (first2 == last2) {  // 处理边界(InputIterator2没有后续元素)
       return std::copy(first1, last1, out);
     }
     *out++ = _compare(*first1, *first2) ? *first1++ : *first2++;
   }
 }
-}
+}  // namespace stdlib
 
 int main() {
-
   int first[] = {5, 10, 15, 20, 25};
   int second[] = {50, 40, 30, 20, 10};
 

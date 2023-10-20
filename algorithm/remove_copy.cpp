@@ -16,11 +16,11 @@ OutputIterator remove_copy(InputIterator first, InputIterator last, OutputIterat
   }
   return result;
 }
-}
+}  // namespace stdlib
 
-#include <iterator>
-#include <iostream>
 #include <algorithm>
+#include <iostream>
+#include <iterator>
 #include <vector>
 
 int main() {

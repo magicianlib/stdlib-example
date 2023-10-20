@@ -1,7 +1,7 @@
 #include <algorithm>
+#include <iostream>
 #include <numeric>
 #include <vector>
-#include <iostream>
 
 /**
  * 重新排列范围 [first,last) 中的元素, 使得 pred 返回 true 的所有元素先于返回 false 的所有元素.
@@ -12,24 +12,24 @@ namespace stdlib {
 template<typename ForwardIterator, typename UnaryPredicate>
 ForwardIterator partition(ForwardIterator first, ForwardIterator last, UnaryPredicate _predicate) {
   while (first != last) {
-    while (_predicate(*first)) { // 结果为 true, 直到遇到 false
+    while (_predicate(*first)) {  // 结果为 true, 直到遇到 false
       ++first;
       if (first == last) {
         return first;
       }
     }
     do {
-      --last; // 从尾部开始
+      --last;  // 从尾部开始
       if (first == last) {
         return first;
       }
-    } while (!_predicate(*last)); // 遇到的第一个 true
-    std::swap(*first, *last); // 交换
-    ++first; // 继续查找下一个
+    } while (!_predicate(*last));  // 遇到的第一个 true
+    std::swap(*first, *last);      // 交换
+    ++first;                       // 继续查找下一个
   }
   return first;
 }
-}
+}  // namespace stdlib
 
 bool is_odd(int v) {
   return (v % 2);
@@ -65,5 +65,4 @@ int main() {
     std::cout << *bound << ' ';
   }
   std::cout << '\n';
-
 }

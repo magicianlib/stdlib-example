@@ -11,8 +11,8 @@
 
 namespace stdlib {
 template<typename InputIterator1, typename InputIterator2, typename OutputIterator>
-OutputIterator set_difference(InputIterator1 first1, InputIterator1 last1,
-  InputIterator2 first2, InputIterator2 last2, OutputIterator result) {
+OutputIterator set_difference(
+    InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2, OutputIterator result) {
   while (first1 != last2 && first2 != last2) {
     if (*first1 < *first2) {
       *result = *first1;
@@ -30,8 +30,8 @@ OutputIterator set_difference(InputIterator1 first1, InputIterator1 last1,
 }
 
 template<typename InputIterator1, typename InputIterator2, typename OutputIterator, typename Compare>
-OutputIterator set_difference(InputIterator1 first1, InputIterator1 last1,
-  InputIterator2 first2, InputIterator2 last2, OutputIterator result, Compare _compare) {
+OutputIterator set_difference(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2,
+    OutputIterator result, Compare _compare) {
   while (first1 != last2 && first2 != last2) {
     if (_compare(*first1, *first2)) {
       *result = *first1;
@@ -47,11 +47,11 @@ OutputIterator set_difference(InputIterator1 first1, InputIterator1 last1,
   // 如果 InputIterator2 元素个数少于 InputIterator1, 则将 InputIterator1 后续的元素全部拷贝到 result 中
   return std::copy(first1, last1, result);
 }
-}
+}  // namespace stdlib
 
 #include <iostream>
-#include <vector>
 #include <iterator>
+#include <vector>
 
 int main() {
   int first[] = {5, 10, 15, 20, 25};

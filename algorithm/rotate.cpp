@@ -18,10 +18,10 @@ void rotate(ForwardIterator first, ForwardIterator middle, ForwardIterator last)
     }
   }
 }
-}
+}  // namespace stdlib
 
-#include <vector>
 #include <iostream>
+#include <vector>
 
 int main() {
   std::vector<int> vt;
@@ -29,7 +29,7 @@ int main() {
   // set some values:
   for (int i = 1; i < 10; ++i) {
     vt.push_back(i);
-  } // 1 2 3 4 5 6 7 8 9
+  }  // 1 2 3 4 5 6 7 8 9
 
   stdlib::rotate(vt.begin(), vt.begin() + 3, vt.end());
   // 4 5 6 7 8 9 1 2 3

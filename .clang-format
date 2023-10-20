@@ -23,6 +23,8 @@ AllowShortEnumsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: InlineOnly
 AllowShortLambdasOnASingleLine: Inline
 AllowShortLoopsOnASingleLine: false
+# 模板声明后添加空格
+SpaceAfterTemplateKeyword: false
 # 指针和引用操作符对其方式:
 # `int* a; int& b; *a = b;`
 PointerAlignment: Left

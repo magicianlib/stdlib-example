@@ -43,7 +43,7 @@ T max(std::initializer_list<T> list, Compare _compare) {
   }
   return max;
 }
-}
+}  // namespace stdlib
 
 int main() {
   std::cout << "max(1,2)==" << stdlib::max(1, 2) << '\n';

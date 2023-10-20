@@ -9,22 +9,21 @@ void swap(T &a, T &b) {
 
 namespace stdlib {
 template<typename ForwardIterator1, typename ForwardIterator2>
-ForwardIterator2 swap_ranges(ForwardIterator1 first1, ForwardIterator1 last1,
-  ForwardIterator2 first2) {
+ForwardIterator2 swap_ranges(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2) {
   while (first1 != last1) {
     swap(*first1, *first2);
     ++first1;
     ++first2;
   }
 }
-}
+}  // namespace stdlib
 
-#include <vector>
 #include <iostream>
+#include <vector>
 
 int main() {
-  std::vector<int> foo(5, 10);        // foo: 10 10 10 10 10
-  std::vector<int> bar(5, 33);        // bar: 33 33 33 33 33
+  std::vector<int> foo(5, 10);  // foo: 10 10 10 10 10
+  std::vector<int> bar(5, 33);  // bar: 33 33 33 33 33
 
   stdlib::swap_ranges(foo.begin() + 1, foo.end() - 1, bar.begin());
 
